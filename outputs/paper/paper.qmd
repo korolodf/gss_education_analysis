@@ -1,0 +1,271 @@
+---
+title: "GSS Education Analysis (Working Title)"
+subtitle: "GSS Education Analysis (Working Subtitle)"
+author: 
+  - Emily Kim
+  - Huda Sahaf
+  - Chloe Thierstein
+thanks: "Code and data are available at: https://github.com/cthierst/gss_education_analysis.git."
+date: "`r Sys.time()`"
+date-format: "D MMMM YYYY"
+abstract: "abstract (work in progress)"
+format: pdf
+number-sections: true
+bibliography: references.bib
+---
+
+
+
+```{r}
+#| include: false
+
+#### Load Library ####
+library(tidyverse)
+library(ggplot2)
+library(RColorBrewer)
+library(modelsummary)
+
+#### Import cleaned_gss_2021.csv ####
+cleaned_gss_2021 <-
+  read.csv(here::here("./inputs/data/2021_data/cleaned_gss_2021.csv"))
+
+```
+
+```{r}
+#| include: false
+
+#### Ordering Highest Year of Education Achieved ####
+
+cleaned_gss_2021$educ <- 
+  factor(cleaned_gss_2021$educ, 
+         levels = c("8th Grade", "9th Grade", "10th Grade", "11th Grade", "12th Grade", "1 Year of College", "2 Years of College", "3 Years of College", "4 Years of College", "5 Years of College", "6 Years of College", "7 Years of College", "8 Years of College"))
+
+```
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-1
+#| fig-cap: "Respondent's Sex by Highest Year of Education Achieved"
+
+#### Creating Graph to Compare Sex Against Year of Completed Education ####
+
+cleaned_gss_2021 |>
+  ggplot(mapping = aes(x = sex, fill = educ)) +
+  geom_bar() + 
+  theme_classic() +
+  labs(x = "Sex",
+       y = "Number",
+       fill = "Highest Year Completed of Education")
+
+```
+
+```{r}
+#| include: false
+
+#### Ordering ####
+
+cleaned_gss_2021$degree <- 
+  factor(cleaned_gss_2021$degree, 
+         levels = c("Less Than High School", "High School", "Associate / Junior College", "Bachelors Degree", "Graduate Degree"))
+
+```
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-2
+#| fig-cap: "Respondent's Sex by Highest Level of Education"
+
+#### Creating Graph to Compare Sex Against Level of Education ####
+
+cleaned_gss_2021 |>
+  ggplot(mapping = aes(x = sex, fill = degree)) +
+  geom_bar() + 
+  theme_classic() +
+  labs(x = "Sex",
+       y = "Number",
+       fill = "Degree")+
+  scale_fill_brewer(palette = "Pastel1")
+
+```
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-3
+#| fig-cap: "Respondent's Sex by Highest Level of Education"
+
+#### Creating Graph to Compare Sex Against Level of Education ####
+
+cleaned_gss_2021 |>
+  ggplot(mapping = aes(x = sex, fill = richwork)) +
+  geom_bar() + 
+  theme_classic() +
+  labs(x = "Sex",
+       y = "Number",
+       fill = "Rich Work")+
+  scale_fill_brewer(palette = "Pastel1")
+```
+
+```{r}
+#| include: false
+
+#### Ordering ####
+
+cleaned_gss_2021$satjob <- 
+  factor(cleaned_gss_2021$satjob, 
+         levels = c("Very Satisfied", "Moderately Satisfied", "A Little Dissatisfied", "Very Dissatisfied"))
+```
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-4
+#| fig-cap: "Respondent's Sex by Job Satisfaction"
+
+#### Creating Graph to Compare Sex Against Job Satisfaction ####
+
+cleaned_gss_2021 |>
+  ggplot(mapping = aes(x = sex, fill = satjob)) +
+  geom_bar() + 
+  theme_classic() +
+  labs(x = "Sex",
+       y = "Number",
+       fill = "Job Satisfaction")+
+  scale_fill_brewer(palette = "Pastel1")
+```
+
+
+```{r}
+#| include: false
+
+#### Ordering ####
+
+cleaned_gss_2021$finrela <- 
+  factor(cleaned_gss_2021$finrela, 
+         levels = c("Far Above Average", "Above Average", "Average", "Below Average", "Far Below Average"))
+```
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-5
+#| fig-cap: "Respondent's Sex by Self-Defined Financial Ranking Against Other US Families"
+
+#### Creating Graph to Compare Sex Against Self-Defined Financial Ranking Against Other US Families ####
+
+cleaned_gss_2021 |>
+  ggplot(mapping = aes(x = sex, fill = finrela)) +
+  geom_bar() + 
+  theme_classic() +
+  labs(x = "Sex",
+       y = "Number",
+       fill = "Rating Against Other Families")+
+  scale_fill_brewer(palette = "Pastel1")
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-6
+#| fig-cap: "Respondent's Highest Level of Education by Self-Defined Financial Ranking Against Other US Families"
+
+#### Creating Graph to Compare Sex Against Self-Defined Financial Ranking Against Other US Families ####
+
+cleaned_gss_2021 |>
+  ggplot(mapping = aes(y = degree, fill = finrela)) +
+  geom_bar() + 
+  theme_classic() +
+  labs(y = "Highest Level of Education",
+       x = "Number",
+       fill = "Rating Against Other Families")+
+  scale_fill_brewer(palette = "Pastel1")+
+  theme(legend.position = "bottom")
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-7
+#| fig-cap: "Respondent's Highest Level of Education by Job Satisfaction"
+
+#### Creating Graph to Compare Sex Against Job Satisfaction ####
+
+cleaned_gss_2021 |>
+  ggplot(mapping = aes(y = degree, fill = satjob)) +
+  geom_bar() + 
+  theme_classic() +
+  labs(y = "Highest Level of Education",
+       x = "Number",
+       fill = "Job Satisfaction")+
+  scale_fill_brewer(palette = "Pastel1")+
+  theme(legend.position = "bottom")
+```
+
+```{r}
+#| include: false
+
+#### Ordering ####
+
+cleaned_gss_2021$class <- 
+  factor(cleaned_gss_2021$class, 
+         levels = c("Lower Class", "Working Class", "Middle Class", "Upper Class"))
+```
+
+
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-8
+#| fig-cap: "Respondent's Highest Level of Education by Self-Ascribed Social Class"
+
+#### Creating Graph to Compare Sex Against Self-Ascribed Social Class ####
+
+cleaned_gss_2021 |>
+  ggplot(mapping = aes(y = degree, fill = class)) +
+  geom_bar() + 
+  theme_classic() +
+  labs(y = "Highest Level of Education",
+       x = "Number",
+       fill = "Self-Ascribed Class")+
+  scale_fill_brewer(palette = "Pastel1")
+```
+
+
+# Introduction
+
+# Data {#sec-data}
+
+# Measurement
+
+# Results
+
+# Discussion
+
+## First discussion point {#sec-first-point}
+
+## Second discussion point
+
+## Third discussion point
+
+## Weaknesses and next steps
+
+\newpage
+
+\appendix
+
+# Appendix {.unnumbered}
+
+# Additional details
+
+\newpage
+
+# References
+
+
