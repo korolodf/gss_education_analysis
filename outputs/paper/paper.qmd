@@ -244,7 +244,215 @@ cleaned_gss_2021 |>
   theme(legend.title = element_text(size = 8),
         legend.text= element_text(size=8))
 ```
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-9
+#| fig-cap: "rich work vs class"
 
+#### Creating Graph ####
+
+cleaned_gss_2021 |>
+  ggplot(mapping = aes(x = richwork, fill = class)) +
+  geom_bar() + 
+  theme_classic() +
+  labs(x = "richwork",
+       y = "number",
+       fill = "class")+
+  scale_fill_brewer(palette = "Pastel1") +
+  theme(legend.title = element_text(size = 8),
+        legend.text= element_text(size=8))
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-10
+#| fig-cap: "richwork vs satfin"
+
+#### Creating Graph to  ####
+
+cleaned_gss_2021 |>
+  ggplot(mapping = aes(x = richwork, fill = satfin)) +
+  geom_bar() + 
+  theme_classic() +
+  labs(x = "richwork",
+       y = "number",
+       fill = "satfin")+
+  scale_fill_brewer(palette = "Pastel1") +
+  theme(legend.title = element_text(size = 8),
+        legend.text= element_text(size=8))
+```
+
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-11
+#| fig-cap: "richwork vs finrela"
+
+#### Creating Graph to  ####
+
+cleaned_gss_2021 |>
+  ggplot(mapping = aes(x = richwork, fill = finrela)) +
+  geom_bar() + 
+  theme_classic() +
+  labs(x = "richwork",
+       y = "number",
+       fill = "finrela")+
+  scale_fill_brewer(palette = "Pastel1") +
+  theme(legend.title = element_text(size = 8),
+        legend.text= element_text(size=8))
+```
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-12
+#| fig-cap: "satfin vs satjob"
+
+#### Creating Graph to  ####
+
+cleaned_gss_2021 |>
+  ggplot(mapping = aes(y = satfin, fill = satjob)) +
+  geom_bar() + 
+  theme_classic() +
+  labs(y = "satfin",
+       x = "number",
+       fill = "satjob")+
+  scale_fill_brewer(palette = "Pastel1") +
+  theme(legend.title = element_text(size = 8),
+        legend.text= element_text(size=8))
+```
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-13
+#| fig-cap: "satfin vs class"
+
+#### Creating Graph to  ####
+
+cleaned_gss_2021 |>
+  ggplot(mapping = aes(y = satfin, fill = class)) +
+  geom_bar() + 
+  theme_classic() +
+  labs(y = "satfin",
+       x = "number",
+       fill = "class")+
+  scale_fill_brewer(palette = "Pastel1") +
+  theme(legend.title = element_text(size = 8),
+        legend.text= element_text(size=8))
+```
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-14
+#| fig-cap: "satfin vs finrela"
+
+#### Creating Graph to  ####
+
+cleaned_gss_2021 |>
+  ggplot(mapping = aes(y = satfin, fill = finrela)) +
+  geom_bar() + 
+  theme_classic() +
+  labs(y = "satfin",
+       x = "number",
+       fill = "finrela")+
+  scale_fill_brewer(palette = "Pastel1") +
+  theme(legend.title = element_text(size = 8),
+        legend.text= element_text(size=8))
+```
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-15
+#| fig-cap: "satfin vs degree"
+
+#### Creating Graph to  ####
+
+cleaned_gss_2021 |>
+  ggplot(mapping = aes(y = satfin, fill = degree)) +
+  geom_bar() + 
+  theme_classic() +
+  labs(y = "satfin",
+       x = "number",
+       fill = "degree")+
+  scale_fill_brewer(palette = "Pastel1") +
+  theme(legend.title = element_text(size = 8),
+        legend.text= element_text(size=8))
+```
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-16
+#| fig-cap: "finrela vs class"
+
+#### Creating Graph to  ####
+
+cleaned_gss_2021 |>
+  ggplot(mapping = aes(y = finrela, fill = class)) +
+  geom_bar() + 
+  theme_classic() +
+  labs(y = "finrela",
+       x = "number",
+       fill = "class")+
+  scale_fill_brewer(palette = "Pastel1") +
+  theme(legend.title = element_text(size = 8),
+        legend.text= element_text(size=8))
+```
+
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-17
+#| fig-cap: "finrela vs satjob"
+
+#### Creating Graph to  ####
+
+cleaned_gss_2021 |>
+  ggplot(mapping = aes(y = finrela, fill = satjob)) +
+  geom_bar() + 
+  theme_classic() +
+  labs(y = "finrela",
+       x = "number",
+       fill = "satjob")+
+  scale_fill_brewer(palette = "Pastel1") +
+  theme(legend.title = element_text(size = 8),
+        legend.text= element_text(size=8))
+```
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-18
+#| fig-cap: "finrela vs satjob"
+
+#### Creating Graph to  ####
+
+cleaned_gss_2021 |>
+  ggplot(mapping = aes(y = finrela, fill = satfin)) +
+  geom_bar() + 
+  theme_classic() +
+  labs(y = "finrela",
+       x = "number",
+       fill = "satfin")+
+  scale_fill_brewer(palette = "Pastel1") +
+  theme(legend.title = element_text(size = 8),
+        legend.text= element_text(size=8))
+```
 
 # Introduction
 
