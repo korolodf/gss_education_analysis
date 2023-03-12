@@ -14,8 +14,6 @@ number-sections: true
 bibliography: references.bib
 ---
 
-
-
 ```{r}
 #| include: false
 
@@ -41,7 +39,6 @@ cleaned_gss_2021$educ <-
          levels = c("8th Grade", "9th Grade", "10th Grade", "11th Grade", "12th Grade", "1 Year of College", "2 Years of College", "3 Years of College", "4 Years of College", "5 Years of College", "6 Years of College", "7 Years of College", "8 Years of College"))
 
 ```
-
 
 ```{r}
 #| echo: false
@@ -73,7 +70,6 @@ cleaned_gss_2021$degree <-
 
 ```
 
-
 ```{r}
 #| echo: false
 #| warning: false
@@ -92,8 +88,6 @@ cleaned_gss_2021 |>
   scale_fill_brewer(palette = "Pastel1")
 
 ```
-
-
 
 ```{r}
 #| echo: false
@@ -123,7 +117,6 @@ cleaned_gss_2021$satjob <-
          levels = c("Very Satisfied", "Moderately Satisfied", "A Little Dissatisfied", "Very Dissatisfied"))
 ```
 
-
 ```{r}
 #| echo: false
 #| warning: false
@@ -142,7 +135,6 @@ cleaned_gss_2021 |>
   scale_fill_brewer(palette = "Pastel1")
 ```
 
-
 ```{r}
 #| include: false
 
@@ -152,7 +144,6 @@ cleaned_gss_2021$finrela <-
   factor(cleaned_gss_2021$finrela, 
          levels = c("Far Above Average", "Above Average", "Average", "Below Average", "Far Below Average"))
 ```
-
 
 ```{r}
 #| echo: false
@@ -222,9 +213,6 @@ cleaned_gss_2021$class <-
          levels = c("Lower Class", "Working Class", "Middle Class", "Upper Class"))
 ```
 
-
-
-
 ```{r}
 #| echo: false
 #| warning: false
@@ -244,6 +232,7 @@ cleaned_gss_2021 |>
   theme(legend.title = element_text(size = 8),
         legend.text= element_text(size=8))
 ```
+
 ```{r}
 #| echo: false
 #| warning: false
@@ -284,8 +273,6 @@ cleaned_gss_2021 |>
         legend.text= element_text(size=8))
 ```
 
-
-
 ```{r}
 #| echo: false
 #| warning: false
@@ -305,7 +292,6 @@ cleaned_gss_2021 |>
   theme(legend.title = element_text(size = 8),
         legend.text= element_text(size=8))
 ```
-
 
 ```{r}
 #| echo: false
@@ -327,7 +313,6 @@ cleaned_gss_2021 |>
         legend.text= element_text(size=8))
 ```
 
-
 ```{r}
 #| echo: false
 #| warning: false
@@ -347,7 +332,6 @@ cleaned_gss_2021 |>
   theme(legend.title = element_text(size = 8),
         legend.text= element_text(size=8))
 ```
-
 
 ```{r}
 #| echo: false
@@ -369,7 +353,6 @@ cleaned_gss_2021 |>
         legend.text= element_text(size=8))
 ```
 
-
 ```{r}
 #| echo: false
 #| warning: false
@@ -389,7 +372,6 @@ cleaned_gss_2021 |>
   theme(legend.title = element_text(size = 8),
         legend.text= element_text(size=8))
 ```
-
 
 ```{r}
 #| echo: false
@@ -411,8 +393,6 @@ cleaned_gss_2021 |>
         legend.text= element_text(size=8))
 ```
 
-
-
 ```{r}
 #| echo: false
 #| warning: false
@@ -432,7 +412,6 @@ cleaned_gss_2021 |>
   theme(legend.title = element_text(size = 8),
         legend.text= element_text(size=8))
 ```
-
 
 ```{r}
 #| echo: false
@@ -491,6 +470,7 @@ cleaned_gss_2021 |>
 ```
 
 
+
 # Introduction
 
 # Data {#sec-data}
@@ -520,5 +500,6 @@ cleaned_gss_2021 |>
 \newpage
 
 # References
+
 
 
