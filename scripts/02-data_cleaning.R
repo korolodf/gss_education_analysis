@@ -35,7 +35,7 @@ cleaned_gss_2021 <-
 #### Select Relevant Columns ####
 cleaned_gss_2021 <-
   cleaned_gss_2021 |>
-  select(educ, degree, sex, satjob, richwork, class, satfin, finrela)
+  select(happy, educ, degree, sex, satjob, richwork, class, satfin, finrela)
 
 #### Removing NA Rows from Data ####
 cleaned_gss_2021 <- 
@@ -44,6 +44,18 @@ cleaned_gss_2021 <-
 
 #### Removing Label to be Able to Make Data More Meaningful ####
 unlabelled(cleaned_gss_2021)
+
+#### Re-coding How Respondent's Describe Their Financial Ranking against Other Americans to be More Meaningful ####
+cleaned_gss_2021 <- cleaned_gss_2021 |>
+  mutate(
+    happy =
+      recode(
+        happy,
+        "1" = "Very Happy",
+        "2" = "Pretty Happy",
+        "3" = "Not Too Happy"
+      )
+  )
 
 #### Re-coding Highest Year of School Completed to be More Meaningful ####
 cleaned_gss_2021 <- cleaned_gss_2021 |>
