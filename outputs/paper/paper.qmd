@@ -454,6 +454,25 @@ cleaned_gss_2021 |>
         legend.text= element_text(size=8))
 ```
 
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-19
+#| fig-cap: "degree"
+
+#### Creating Graph to  ####
+
+cleaned_gss_2021 |>
+  ggplot(mapping = aes(y = degree, fill = degree)) +
+  geom_bar() + 
+  theme_classic() +
+  labs(y = "degree",
+       x = "number")+
+  scale_fill_brewer(palette = "Pastel1") +
+  theme(legend.title = element_text(size = 8),
+        legend.text= element_text(size=8))
+```
+
 # Introduction
 
 # Data {#sec-data}
