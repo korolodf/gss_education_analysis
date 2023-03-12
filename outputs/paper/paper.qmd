@@ -474,11 +474,10 @@ cleaned_gss_2021 |>
 ```
 
 ```{r}
-
 #| echo: false
 #| warning: false
 #| label: fig-20
-#| fig-cap: "degree"
+#| fig-cap: "happy vs degree"
 
 cleaned_gss_2021 |>
   ggplot(mapping = aes(y = happy, fill = degree)) +
