@@ -35,7 +35,7 @@ cleaned_gss_2021 <-
 #### Select Relevant Columns ####
 cleaned_gss_2021 <-
   cleaned_gss_2021 |>
-  select(happy, educ, degree, sex, satjob, richwork, class, satfin, finrela)
+  select(happy, degree, sex, satjob, richwork, class, satfin, finrela)
 
 #### Removing NA Rows from Data ####
 cleaned_gss_2021 <- 
@@ -57,27 +57,7 @@ cleaned_gss_2021 <- cleaned_gss_2021 |>
       )
   )
 
-#### Re-coding Highest Year of School Completed to be More Meaningful ####
-cleaned_gss_2021 <- cleaned_gss_2021 |>
-  mutate(
-    educ = 
-      recode(
-        educ,
-        "8" = "8th Grade",
-        "9" = "9th Grade",
-        "10" = "10th Grade",
-        "11" = "11th Grade",
-        "12" = "12th Grade",
-        "13" = "1 Year of College",
-        "14" = "2 Years of College",
-        "15" = "3 Years of College",
-        "16" = "4 Years of College",
-        "17" = "5 Years of College",
-        "18" = "6 Years of College",
-        "19" = "7 Years of College",
-        "20" = "8 Years of College"
-        )
-  )
+
 
 #### Re-coding Respondent's Highest Degree of Education to be More Meaningful ####
 cleaned_gss_2021 <- cleaned_gss_2021 |>
@@ -153,6 +133,9 @@ cleaned_gss_2021 <- cleaned_gss_2021 |>
       )
   )
 
+
+
+
 #### Re-coding How Respondent's Describe Their Financial Ranking against Other Americans to be More Meaningful ####
 cleaned_gss_2021 <- cleaned_gss_2021 |>
   mutate(
@@ -172,3 +155,5 @@ write_csv(
   x = cleaned_gss_2021,
   file = "cleaned_gss_2021.csv"
 ) #move this .csv to 2021_data folder
+
+
