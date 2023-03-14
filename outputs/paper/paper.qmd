@@ -6,7 +6,7 @@ author:
   - Huda Sahaf
   - Chloe Thierstein
 thanks: "Code and data are available at: https://github.com/cthierst/gss_education_analysis.git"
-date: "`r Sys.time()`"
+date: "March 16, 2023"
 date-format: "D MMMM YYYY"
 abstract: "abstract (work in progress)"
 format: pdf
@@ -38,15 +38,15 @@ cleaned_gss_2021 <-
 
 ## Data Management {#sec-first-point}
 
-This paper utilzes the R statistical programming language \[citer\], along with several packages, tidyverse \[citetidyverse\], here \[citehere\], janitor \[citejanitor\],and dplyr \[citedplyr\]. All figures in this paper have been created using the packages ggplot2 \[citeggplot\] and the tables have been created using knitr \[citeknitr\] and kableExtra \[citekableextra\]. The color styles in graphs have been created using the RColorBrewer packages \[citercolorbrewer\] and all graph combinations were created using the patchwork package \[citepatchwork\].
+This paper utilzes the R statistical programming language [@citeR], along with several packages, tidyverse [@citetidyverse], here [@citehere], janitor [@citejanitor],and dplyr [@citedplyr]. All figures in this paper have been created using the packages ggplot2 [@citeggplot2] and the tables have been created using knitr [@citeknitr] and kableExtra [@citekablextra]. The color styles in graphs have been created using the RColorBrewer packages [@citercolorbrewer].
 
 ## Source and Methodology
 
-All data within this paper are extracted from the 2021 United States General Social Survey (GSS). This survey consists of a series of nationally representative cross-sectional interviews and collects data on contemporary American society in order to explain trends in opinions, attitudes and behaviors and monitor these trends \[citegsscodebook\]. Since it began tracking trends in public opinion in 1972, the GSS has used in-person data collection as its primary method of data collection but in 2021, it moved to an address-based sampling method with a focus on web and web-based self-administered questionnaires \[citegsscodebook\]. The 2021 GSS was conducted from December 1, 2020 to May 3, 2021, and was processed in accordance with standard NORC procedures \[citegsscodebook\].
+All data within this paper are extracted from the 2021 United States General Social Survey (GSS). This survey consists of a series of nationally representative cross-sectional interviews and collects data on contemporary American society in order to explain trends in opinions, attitudes and behaviors and monitor these trends **\[citegsscodebook\].** Since it began tracking trends in public opinion in 1972, the GSS has used in-person data collection as its primary method of data collection but in 2021, it moved to an address-based sampling method with a focus on web and web-based self-administered questionnaires **\[citegsscodebook\]**. The 2021 GSS was conducted from December 1, 2020 to May 3, 2021, and was processed in accordance with standard NORC procedures **\[citegsscodebook\].**
 
 ## Sampling
 
-The 2021 GSS samples adults over the age of 18 in the United States who do not live in institutional housing \[citegsscodebook\]. This GSS was released in three batches, the first consisted of 10,091 addresses, the second consisted of 10,000 addresses and the third consisted of 7,500 addresses \[citegsscodebook\]. From these three releases, 1,271 completed the survey from the first batch, 1,391 completed the survey from the second batch, and 1,069 completed the survey from the third batch \[citegsscodebook\]. Meaning that there was an overall response yield of 13.5% or 3,731 complete responses from the 27,591 surveys released \[citegsscodebook\].
+The 2021 GSS samples adults over the age of 18 in the United States who do not live in institutional housing **\[citegsscodebook\].** This GSS was released in three batches, the first consisted of 10,091 addresses, the second consisted of 10,000 addresses and the third consisted of 7,500 addresses **\[citegsscodebook\]**. From these three releases, 1,271 completed the survey from the first batch, 1,391 completed the survey from the second batch, and 1,069 completed the survey from the third batch **\[citegsscodebook\].** Meaning that there was an overall response yield of 13.5% or 3,731 complete responses from the 27,591 surveys released **\[citegsscodebook\].**
 
 ## Weighting
 
@@ -130,7 +130,7 @@ Overall, there seems to be a significant relationship between education, social 
 
 ## Third discussion point
 
-## Weaknesses and next steps
+## Limitations and weaknesses 
 
 There are several limitations to this paper. One weakness is that our insights rely on data from the General Social Survey (GSS), which is a cross-sectional survey that collects data at a single point in time. While it can be useful for exploring relationships between variables and generating hypotheses, it cannot establish causality between variables, has limited ability to assess change over time, and has potential for selection bias if participants are not representative of the population of interest **\[cite article\]**. Due to the nature of the data being self-reported responses, it may not fully capture the dynamic nature of the ways in which various levels of education affect one\'s overall well-being. GSS responses are subject to influence by external factors such as recall bias, in which participants may have left out details when reporting about their subjective experiences.
 
