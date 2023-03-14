@@ -32,6 +32,26 @@ cleaned_gss_2021 <-
 
 ```
 
+# Introduction {#sec-introduction}
+
+# Data {#sec-data}
+
+## Data Management {#sec-first-point}
+
+This paper utilzes the R statistical programming language \[citer\], along with several packages, tidyverse \[citetidyverse\], here \[citehere\], janitor \[citejanitor\],and dplyr \[citedplyr\]. All figures in this paper have been created using the packages ggplot2 \[citeggplot\] and the tables have been created using knitr \[citeknitr\] and kableExtra \[citekableextra\]. The color styles in graphs have been created using the RColorBrewer packages \[citercolorbrewer\] and all graph combinations were created using the patchwork package \[citepatchwork\].
+
+## Source and Methodology
+
+All data within this paper are extracted from the 2021 United States General Social Survey (GSS). This survey consists of a series of nationally representative cross-sectional interviews and collects data on contemporary American society in order to explain trends in opinions, attitudes and behaviors and monitor these trends \[citegsscodebook\]. Since it began tracking trends in public opinion in 1972, the GSS has used in-person data collection as its primary method of data collection but in 2021, it moved to an address-based sampling method with a focus on web and web-based self-administered questionnaires \[citegsscodebook\]. The 2021 GSS was conducted from December 1, 2020 to May 3, 2021, and was processed in accordance with standard NORC procedures \[citegsscodebook\].
+
+## Sampling
+
+The 2021 GSS samples adults over the age of 18 in the United States who do not live in institutional housing \[citegsscodebook\]. This GSS was released in three batches, the first consisted of 10,091 addresses, the second consisted of 10,000 addresses and the third consisted of 7,500 addresses \[citegsscodebook\]. From these three releases, 1,271 completed the survey from the first batch, 1,391 completed the survey from the second batch, and 1,069 completed the survey from the third batch \[citegsscodebook\]. Meaning that there was an overall response yield of 13.5% or 3,731 complete responses from the 27,591 surveys released \[citegsscodebook\].
+
+## Weighting
+
+## Key Features
+
 ```{r}
 #| include: false
 
@@ -83,6 +103,40 @@ cleaned_gss_2021$degree <-
          levels = c("Less Than High School", "High School", "Associate / Junior College", "Bachelors Degree", "Graduate Degree"))
 
 ```
+
+# Measurement
+
+# Results {#sec-results}
+
+# Discussion
+
+## The American Dream
+
+The United States is built upon individualism, which trickles into their definitions of financial security, happiness, and overall fulfillment and satisfaction in life. Wellbeing of individuals within the United States therefore, is tracked and monitored through a variety of different factors. The aim of this investigation was to determine whether higher educational achievement influenced an individuals perceptions of social class, degree of financial satisfaction and job satisfaction. These factors were chosen because of their significance with regards to the American Dream, a concept that is built off a linear pattern of behavior in terms of economic security. Hustle culture is popular within the United States as an extension of the American Dream, because the idea that an individual must work hard in order to reap the benefits in terms is what drives culture within America.
+
+According to Economic Security and the American Dream, the rewards of the American Dream included owning a home, having access to quality health care, having a job that enables an individual to support their family, and having a secure and stately retirement(citation). These are the fundamentals in terms of how Americans generally define their wellbeing in society. However, no matter how linear an American\'s personal development or educational journey may be, it is simply impossible to be able to guarantee the rewards that the American Dream has to offer. But the ideals of living in the United States, has a powerful impact on culture, and how individuals view themselves and their position within society, but how they fare in comparison to those around them.
+
+The assumption in general is a higher degree of education translates so an overall greater quality of life or well-being, greater job satisfaction, higher social class, etc. However, we found that this was not necessarily the case. Overall out of our participants that completed the survey, the largest group had only completed high school, and the second largest group had completed a bachelor\'s degree. The level of education was compared to a few variables: overall happiness, self-ascribed social class, job satisfaction, and financial ranking against other families in the US.
+
+## Social Class
+
+Researchers have investigated the correlation between education and happiness, with several studies indicating that a higher level of education is positively associated with greater levels of happiness. This relationship may be explained by the fact that education can impact one\'s self-ascribed social class, which in turn can influence their notion of happiness. Higher education can provide individuals with better job opportunities, higher income, better access to resources, and greater social mobility, leading to a higher sense of social status. As a result, these individuals may experience greater life satisfaction, which contributes to their overall sense of happiness and security.
+
+In a 2020 article published in the Journal of Personality and Social Psychology, authors Siyu Yu and Steven L. Blader examined the impact of status and social class on subjective well-being (SWB). They found that social class addresses fundamental psychological needs, such as autonomy, mastery, respect, and occupational prestige, and proposed that individuals in higher social classes experience greater levels of status and power, leading to higher SWB **\[cite page 333\]**. Conversely, individuals in lower social classes feel lower levels of status and power, resulting in lower levels of SWB. As shown in **Figure 15**, we found that individuals holding Bachelors and Graduate Degrees are proportionally more satisfied with their financial situation, with the large majority selecting \"Pretty Well Satisfied\" and \"More or Less Satisfied\" than those selecting \"Not Satisfied at All\". Both the research and data point to the link between higher social class and greater levels of self-ascribed satisfaction and happiness.
+
+Overall, there seems to be a significant relationship between education, social class, and one\'s perceived well-being. Education can serve as a key factor in determining an individual\'s social class as it unlocks opportunities for resources and mobility, which in turn can impact their sense of status and overall sense of happiness. At the same time, while higher levels of education may be generally associated with greater levels of happiness, this relationship may not always be a cause and effect correlation. Subjective well-being may be further influenced by other factors such as personal values, cultural background, and social support. It is important to consider these important nuances when examining the data in order to develop a more comprehensive understanding of how variables interact and impact individuals\' lives. This will be further explored in the weaknesses, ethics, and bias section of this paper.
+
+## Second discussion point
+
+## Third discussion point
+
+## Weaknesses and next steps
+
+There are several limitations to this paper. One weakness is that our insights rely on data from the General Social Survey (GSS), which is a cross-sectional survey that collects data at a single point in time. While it can be useful for exploring relationships between variables and generating hypotheses, it cannot establish causality between variables, has limited ability to assess change over time, and has potential for selection bias if participants are not representative of the population of interest **\[cite article\]**. Due to the nature of the data being self-reported responses, it may not fully capture the dynamic nature of the ways in which various levels of education affect one\'s overall well-being. GSS responses are subject to influence by external factors such as recall bias, in which participants may have left out details when reporting about their subjective experiences.
+
+Another potential ethical concern is that our paper may perpetuate the notion that higher education is the only solution to achieving happiness and success, disregarding the presence of systemic inequalities such as racism and economic inequality that can limit access to education and social mobility. Moreover, the sample survey in the GSS may not fully represent the experiences of more marginalized groups, which point to the need for further research and survey strategies that incorporate more diverse perspectives.
+
+In sum, while the paper provides valuable insights on the relationship between education and self-perceived happiness, it is important to consider the limitations, ethical concerns, and potential biases in the data and interpretation of our findings.
 
 ```{r}
 #| echo: false
@@ -483,33 +537,7 @@ cleaned_gss_2021 |>
         legend.text= element_text(size=8))
 ```
 
-# Introduction {#sec-introduction}
-
-# Data {#sec-data}
-
-## Data Management {#sec-first-point}
-
-## Source and Methodology
-
-## Sampling
-
-## Weighting
-
-## Key Features
-
-# Measurement
-
-# Results {#sec-results}
-
-# Discussion
-
-## First discussion point
-
-## Second discussion point
-
-## Third discussion point
-
-## Weaknesses and next steps
+\
 
 \newpage
 
