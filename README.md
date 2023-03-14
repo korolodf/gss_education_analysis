@@ -12,7 +12,7 @@ Following the download of your environment, you will need to download the packag
 
 -   insert packages here
 
-## Download the Data
+## Downloading Data
 
 As the data for this project comes from the US General Social Survey, we do not have permission to store the data within our repository. To access this data, you will need to download the data physically from the [GSS website](https://gss.norc.org/get-the-data/stata) and select "2021." You will need to store this data in your inputs folder,
 
