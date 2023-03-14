@@ -10,7 +10,8 @@ date: "`r Sys.time()`"
 date-format: "D MMMM YYYY"
 abstract: "abstract (work in progress)"
 format: pdf
-number-sections: true
+toc: TRUE
+number-sections: TRUE
 bibliography: references.bib
 ---
 
@@ -482,17 +483,27 @@ cleaned_gss_2021 |>
         legend.text= element_text(size=8))
 ```
 
-# Introduction
+# Introduction {#sec-introduction}
 
 # Data {#sec-data}
 
+## Data Management {#sec-first-point}
+
+## Source and Methodology
+
+## Sampling
+
+## Weighting
+
+## Key Features
+
 # Measurement
 
-# Results
+# Results {#sec-results}
 
 # Discussion
 
-## First discussion point {#sec-first-point}
+## First discussion point
 
 ## Second discussion point
 
@@ -504,9 +515,7 @@ cleaned_gss_2021 |>
 
 \appendix
 
-# Appendix {.unnumbered}
-
-# Additional details
+# Appendix
 
 \newpage
 
