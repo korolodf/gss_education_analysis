@@ -98,23 +98,22 @@ variable_table |>
 
 ```
 
-```{r}
-#| include: false
-
-#### Ordering ####
-
-cleaned_gss_2021$degree <- 
-  factor(cleaned_gss_2021$degree, 
-         levels = c("Less Than High School", "High School", "Associate / Junior College", "Bachelors Degree", "Graduate Degree"))
-
-```
-
 # Results {#sec-results}
 
 ```{r}
 #| include: false
 
-#### Ordering ####
+#### Ordering Highest-Level of Education to be Easier to Read in Graphs####
+
+cleaned_gss_2021$degree <- 
+  factor(cleaned_gss_2021$degree, 
+         levels = c("Less Than High School", "High School", "Associate / Junior College", "Bachelors Degree", "Graduate Degree"))
+```
+
+```{r}
+#| include: false
+
+#### Ordering Job Satisfaction to be Easier to Read in Graphs####
 
 cleaned_gss_2021$satjob <- 
   factor(cleaned_gss_2021$satjob, 
@@ -122,21 +121,141 @@ cleaned_gss_2021$satjob <-
 ```
 
 ```{r}
+#| include: false
+
+#### Ordering Self-Ascribed Financial Wellness Compared to Other US Families ####
+
+cleaned_gss_2021$finrela <- 
+  factor(cleaned_gss_2021$finrela, 
+         levels = c("Far Above Average", "Above Average", "Average", "Below Average", "Far Below Average"))
+```
+
+```{r}
+#| include: false
+
+#### Ordering Self-Ascribed Social Class of Respondents####
+
+cleaned_gss_2021$class <- 
+  factor(cleaned_gss_2021$class, 
+         levels = c("Lower Class", "Working Class", "Middle Class", "Upper Class"))
+```
+
+```{r}
 #| echo: false
 #| warning: false
-#| label: fig-4
-#| fig-cap: "Respondent's Sex by Job Satisfaction"
+#| label: fig-5
+#| fig-cap: "Respondent's Self-Ascribed Financial Ranking Against Other US Families by Sex"
 
-#### Creating Graph to Compare Sex Against Job Satisfaction ####
+#### Creating Graph to Compare Respondent's Self-Ascribed Financial Ranking Against Other US Families by Sex ####
 
 cleaned_gss_2021 |>
-  ggplot(mapping = aes(x = sex, fill = satjob)) +
+  ggplot(mapping = aes(x = sex, fill = finrela)) +
   geom_bar() + 
   theme_classic() +
   labs(x = "Sex",
-       y = "Number",
-       fill = "Job Satisfaction")+
+       y = "Number of Respondents",
+       fill = "Rating Against Other US Families")+
   scale_fill_brewer(palette = "Pastel1")
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-6
+#| fig-cap: "Respondent's Self-Asscribed Financial Ranking Against Other US Families by Their Highest Level of Education Achieved"
+
+#### Creating Graph to Compare Respondent's Self-Asscribed FinancialRanking Against Other US Families by Their Highest Level of Education Achieved ####
+
+cleaned_gss_2021 |>
+  ggplot(mapping = aes(y = degree, fill = finrela)) +
+  geom_bar() + 
+  theme_classic() +
+  labs(y = "Highest Level of Education Achieved",
+       x = "Number of Respondents",
+       fill = "Rating Against Other US Families")+
+  scale_fill_brewer(palette = "Pastel1")+
+  theme(legend.title = element_text(size = 6),
+        legend.text= element_text(size=6))
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-7
+#| fig-cap: "Respondent's Report of Job Satisfaction by Their Highest Level of Education Achieved"
+
+#### Creating Graph to Respondent's Report of Job Satisfaction by Their Highest Level of Education Achieved ####
+
+cleaned_gss_2021 |>
+  ggplot(mapping = aes(y = degree, fill = satjob)) +
+  geom_bar() + 
+  theme_classic() +
+  labs(y = "Highest Level of Education Achieved",
+       x = "Number of Respondents",
+       fill = "Job Satisfaction")+
+  scale_fill_brewer(palette = "Pastel1")+
+  theme(legend.title = element_text(size = 6),
+        legend.text= element_text(size=6))
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-15
+#| fig-cap: "Respondent's Report of Financial Satisfaction by Their Highest Level of Education Achieved"
+
+#### Creating Graph to Compare Respondent's Report of Financial Satisfaction by Their Highest Level of Education Achieved ####
+
+cleaned_gss_2021 |>
+  ggplot(mapping = aes(y = satfin, fill = degree)) +
+  geom_bar() + 
+  theme_classic() +
+  labs(y = "Financial Satisfaction",
+       x = "Number of Respondents",
+       fill = "Highest Level of Education Achieved")+
+  scale_fill_brewer(palette = "Pastel1") +
+  theme(legend.title = element_text(size = 8),
+        legend.text= element_text(size=8))
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-17
+#| fig-cap: "Respondent's Report of Job Satisfaction by Their Self-Asscribed Financial Ranking Against Other US Families"
+
+#### Creating Graph to Compare Respondent's Report of Job Satisfaction by Their Self-Asscribed Financial Ranking Against Other US Families ####
+
+cleaned_gss_2021 |>
+  ggplot(mapping = aes(y = finrela, fill = satjob)) +
+  geom_bar() + 
+  theme_classic() +
+  labs(y = "Rating Against Other US Families",
+       x = "Number of Respondents",
+       fill = "Job Satisfaction")+
+  scale_fill_brewer(palette = "Pastel1") +
+  theme(legend.title = element_text(size = 8),
+        legend.text= element_text(size=8))
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-18
+#| fig-cap: "finrela vs satjob"
+
+#### Creating Graph to  ####
+
+cleaned_gss_2021 |>
+  ggplot(mapping = aes(y = finrela, fill = satfin)) +
+  geom_bar() + 
+  theme_classic() +
+  labs(y = "Rating Against Other US Families",
+       x = "Number of Respondents",
+       fill = "Financial Satisfaction")+
+  scale_fill_brewer(palette = "Pastel1") +
+  theme(legend.title = element_text(size = 8),
+        legend.text= element_text(size=8))
 ```
 
 # Discussion
@@ -166,144 +285,6 @@ There are several limitations to this paper. One weakness is that our insights r
 Another potential ethical concern is that our paper may perpetuate the notion that higher education is the only solution to achieving happiness and success, disregarding the presence of systemic inequalities such as racism and economic inequality that can limit access to education and social mobility. Moreover, the sample survey in the GSS may not fully represent the experiences of more marginalized groups, which point to the need for further research and survey strategies that incorporate more diverse perspectives.
 
 In sum, while the paper provides valuable insights on the relationship between education and self-perceived happiness, it is important to consider the limitations, ethical concerns, and potential biases in the data and interpretation of our findings.
-
-```{r}
-#| include: false
-
-#### Ordering ####
-
-cleaned_gss_2021$finrela <- 
-  factor(cleaned_gss_2021$finrela, 
-         levels = c("Far Above Average", "Above Average", "Average", "Below Average", "Far Below Average"))
-```
-
-```{r}
-#| echo: false
-#| warning: false
-#| label: fig-5
-#| fig-cap: "Respondent's Sex by Self-Defined Financial Ranking Against Other US Families"
-
-#### Creating Graph to Compare Sex Against Self-Defined Financial Ranking Against Other US Families ####
-
-cleaned_gss_2021 |>
-  ggplot(mapping = aes(x = sex, fill = finrela)) +
-  geom_bar() + 
-  theme_classic() +
-  labs(x = "Sex",
-       y = "Number",
-       fill = "Rating Against Other Families")+
-  scale_fill_brewer(palette = "Pastel1")
-```
-
-```{r}
-#| echo: false
-#| warning: false
-#| label: fig-6
-#| fig-cap: "Respondent's Highest Level of Education by Self-Defined Financial Ranking Against Other US Families"
-
-#### Creating Graph to Compare Sex Against Self-Defined Financial Ranking Against Other US Families ####
-
-cleaned_gss_2021 |>
-  ggplot(mapping = aes(y = degree, fill = finrela)) +
-  geom_bar() + 
-  theme_classic() +
-  labs(y = "Highest Level of Education",
-       x = "Number",
-       fill = "Rating Against Other Families")+
-  scale_fill_brewer(palette = "Pastel1")+
-  theme(legend.title = element_text(size = 6),
-        legend.text= element_text(size=6))
-```
-
-```{r}
-#| echo: false
-#| warning: false
-#| label: fig-7
-#| fig-cap: "Respondent's Highest Level of Education by Job Satisfaction"
-
-#### Creating Graph to Compare Sex Against Job Satisfaction ####
-
-cleaned_gss_2021 |>
-  ggplot(mapping = aes(y = degree, fill = satjob)) +
-  geom_bar() + 
-  theme_classic() +
-  labs(y = "Highest Level of Education",
-       x = "Number",
-       fill = "Job Satisfaction")+
-  scale_fill_brewer(palette = "Pastel1")+
-  theme(legend.title = element_text(size = 6),
-        legend.text= element_text(size=6))
-```
-
-```{r}
-#| include: false
-
-#### Ordering ####
-
-cleaned_gss_2021$class <- 
-  factor(cleaned_gss_2021$class, 
-         levels = c("Lower Class", "Working Class", "Middle Class", "Upper Class"))
-```
-
-```{r}
-#| echo: false
-#| warning: false
-#| label: fig-15
-#| fig-cap: "satfin vs degree"
-
-#### Creating Graph to  ####
-
-cleaned_gss_2021 |>
-  ggplot(mapping = aes(y = satfin, fill = degree)) +
-  geom_bar() + 
-  theme_classic() +
-  labs(y = "satfin",
-       x = "number",
-       fill = "degree")+
-  scale_fill_brewer(palette = "Pastel1") +
-  theme(legend.title = element_text(size = 8),
-        legend.text= element_text(size=8))
-```
-
-```{r}
-#| echo: false
-#| warning: false
-#| label: fig-17
-#| fig-cap: "finrela vs satjob"
-
-#### Creating Graph to  ####
-
-cleaned_gss_2021 |>
-  ggplot(mapping = aes(y = finrela, fill = satjob)) +
-  geom_bar() + 
-  theme_classic() +
-  labs(y = "finrela",
-       x = "number",
-       fill = "satjob")+
-  scale_fill_brewer(palette = "Pastel1") +
-  theme(legend.title = element_text(size = 8),
-        legend.text= element_text(size=8))
-```
-
-```{r}
-#| echo: false
-#| warning: false
-#| label: fig-18
-#| fig-cap: "finrela vs satjob"
-
-#### Creating Graph to  ####
-
-cleaned_gss_2021 |>
-  ggplot(mapping = aes(y = finrela, fill = satfin)) +
-  geom_bar() + 
-  theme_classic() +
-  labs(y = "finrela",
-       x = "number",
-       fill = "satfin")+
-  scale_fill_brewer(palette = "Pastel1") +
-  theme(legend.title = element_text(size = 8),
-        legend.text= element_text(size=8))
-```
 
 \
 
