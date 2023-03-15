@@ -20,26 +20,6 @@ set.seed(853)
 
 simulated_gss_2021 <-
   tibble(
-    "highest_year_of_education" = sample(
-      x = c(
-        "7th Grade",
-        "8th Grade",
-        "9th Grade",
-        "10th Grade",
-        "11th Grade",
-        "12th Grade",
-        "1 Year of College",
-        "2 Years of College",
-        "3 Years of College",
-        "4 Years of College",
-        "5 Years of College",
-        "6 Years of College",
-        "7 Years of College",
-        "8 Years of College"
-      ),
-      size = 4032,
-      replace = TRUE
-    ),
     "highest_level_of_education" = sample(
       x = c(
         "Less Than High School",
@@ -51,28 +31,12 @@ simulated_gss_2021 <-
       size = 4032,
       replace = TRUE
     ),
-    "respondents_sex" = sample(
-      x = c(
-        "Male",
-        "Female"
-      ),
-      size = 4032,
-      replace = TRUE
-    ),
     "job_satisfaction" = sample(
       x = c(
         "Very Satisfied",
         "Moderately Satisfied",
         "A Little Dissatisfied",
         "Very Dissatisfied"
-      ),
-      size = 4032,
-      replace = TRUE
-    ),
-    "impact_of_winning_money_on_maintaining_employment" = sample(
-      x = c(
-        "Continue to Work",
-        "Stop Working"
       ),
       size = 4032,
       replace = TRUE
@@ -96,7 +60,7 @@ simulated_gss_2021 <-
       size = 4032,
       replace = TRUE
     ),
-    "self_ascribed_comparison_of_financial_status_against_other_american_families" = sample(
+    "compare_financial_status_against_other_us_families" = sample(
       x = c(
         "Far Below Average",
         "Below Average",
