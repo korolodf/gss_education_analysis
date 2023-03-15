@@ -35,7 +35,7 @@ cleaned_gss_2021 <-
 
 # Introduction {#sec-introduction}
 
-# Data {#sec-data}
+# Data and methods {#sec-data}
 
 ## Data Management {#sec-first-point}
 
@@ -49,13 +49,9 @@ All data within this paper are extracted from the 2021 United States General Soc
 
 The 2021 GSS samples adults over the age of 18 in the United States who do not live in institutional housing **\[citegsscodebook\].** This GSS was released in three batches, the first consisted of 10,091 addresses, the second consisted of 10,000 addresses and the third consisted of 7,500 addresses **\[citegsscodebook\]**. From these three releases, 1,271 completed the survey from the first batch, 1,391 completed the survey from the second batch, and 1,069 completed the survey from the third batch **\[citegsscodebook\].** Meaning that there was an overall response yield of 13.5% or 3,731 complete responses from the 27,591 total surveys released **\[citegsscodebook\].**
 
-## Methodology
-
-As mentioned previously, this paper utilizes data from the 2021 US General Social Survey (GSS).
-
 ## Key Features
 
-This paper is assessing our estimand 1,567 responses of the 3,731 complete responses received which represents 42% of the complete respondents and only 5.7% of the total surveys released. Respondent's to the 2021 GSS are males or female US citizens, not living in institutional housing, who are over the age of 18 **\[citegsscodebook\]**. In our analysis we removed 2,164 responses to account for unanswered or not applicable responses. We did this to ensure that the data used in this paper is complete and representative of all variables. The variables we selected for our analysis and their measurement levels can be seen in @tbl-1.
+This paper is assessing our estimand of 1,567 responses of the 3,731 complete responses received which represents 42% of the complete respondents and only 5.7% of the total surveys released. Respondent's to the 2021 GSS are males or female US citizens, not living in institutional housing, who are over the age of 18 **\[citegsscodebook\]**. In our analysis we removed 2,164 responses to account for unanswered or not applicable responses. We did this to ensure that the data used in this paper is complete and representative of all variables. The variables we selected for our analysis can be seen in @tbl-1 and their measurement levels can be seen in @tbl-2.
 
 ```{r}
 #| include: false
@@ -69,16 +65,14 @@ This paper is assessing our estimand 1,567 responses of the 3,731 complete respo
       "degree",
       "finrela",
       "satjob",
-      "satfin",
-      "sex"
+      "satfin"
     ),
     "Variable Description" = c(
       "Self-ascribed class of the respondent",
       "Highest level of education achieved by respondent",
       "Self-ascribed ranking of respondnet when compared to other US households",
       "Level of satisfaction with the work respondents do",
-      "Level of satisfaction with the job respondents have",
-      "Sex of the respondent"
+      "Level of satisfaction with the job respondents have"
     )
   )
 ```
@@ -95,16 +89,14 @@ This paper is assessing our estimand 1,567 responses of the 3,731 complete respo
       "degree",
       "finrela",
       "satjob",
-      "satfin",
-      "sex"
+      "satfin"
     ),
     "Variable Measurement" = c(
       "Lower Class, Working Class, Middle Class, Upper Class",
       "Less Than High School, High School, Associate / Junior College, Bachelors, Graduate",
       "Far Below Average, Below Average, Average, Above Average, Far Above Average",
       "Very Satisfied, Moderately Satisfied, A Little Dissatisfied, Very Dissatisfied",
-      "Pretty Well Satisfied, More or Less Satisfied, Not Satisfied at All",
-      "Male, Female"
+      "Pretty Well Satisfied, More or Less Satisfied, Not Satisfied at All"
     )
   )
 ```
@@ -176,31 +168,15 @@ cleaned_gss_2021$class <-
          levels = c("Lower Class", "Working Class", "Middle Class", "Upper Class"))
 ```
 
-```{r}
-#| echo: false
-#| warning: false
-#| label: fig-5
-#| fig-cap: "Respondent's Self-Ascribed Financial Ranking Against Other US Families by Sex"
-
-#### Creating Graph to Compare Respondent's Self-Ascribed Financial Ranking Against Other US Families by Sex ####
-
-cleaned_gss_2021 |>
-  ggplot(mapping = aes(x = sex, fill = finrela)) +
-  geom_bar() + 
-  theme_classic() +
-  labs(x = "Sex",
-       y = "Number of Respondents",
-       fill = "Rating Against Other US Families")+
-  scale_fill_brewer(palette = "Pastel1")
-```
+When looking at @fig-1, we can see that the majority of respondents have only completed their high school diploma with the next highest response category being bachelor's degree and the third being graduate degrees. Generally respondents who identified as having their bachelor's degree or graduate degree reported being more likely to be "above average" and "far above average" than respondents who reported having an associate or junior college degree or lower. Interestingly, a large portion of respondents with higher levels of education still reported themselves as "average" when comparing themselves to other US families. Additionally, the rate at which those with less than a high school diploma and high school diplomas self-report ranking when compared to other US households decreases substantially at every measuring point as ranking increases.
 
 ```{r}
 #| echo: false
 #| warning: false
-#| label: fig-6
-#| fig-cap: "Respondent's Self-Asscribed Financial Ranking Against Other US Families by Their Highest Level of Education Achieved"
+#| label: fig-1
+#| fig-cap: "Respondent's Self-Ascribed Financial Ranking Against Other US Families by Their Highest Level of Education Achieved"
 
-#### Creating Graph to Compare Respondent's Self-Asscribed FinancialRanking Against Other US Families by Their Highest Level of Education Achieved ####
+#### Creating Graph to Compare Respondent's Self-Ascribed FinancialRanking Against Other US Families by Their Highest Level of Education Achieved ####
 
 cleaned_gss_2021 |>
   ggplot(mapping = aes(y = degree, fill = finrela)) +
@@ -214,13 +190,15 @@ cleaned_gss_2021 |>
         legend.text= element_text(size=6))
 ```
 
+When looking at @fig-2, we can see that at almost all levels of education, the majority of respondents rank themselves as "average" or lesser. This is only false in the group of respondents who have graduate degrees whose majority rank themselves as "above average" or higher. Interestingly, we can see that at each level of education, there are respondents who rank themselves as "above average" making it appear that there may be other factors that are relevant in how respondents rank themselves.
+
 ```{r}
 #| echo: false
 #| warning: false
-#| label: fig-7
-#| fig-cap: "Respondent's Report of Job Satisfaction by Their Highest Level of Education Achieved"
+#| label: fig-2
+#| fig-cap: "Respondent's Degree of Job Satisfaction by Their Highest Level of Education Achieved"
 
-#### Creating Graph to Respondent's Report of Job Satisfaction by Their Highest Level of Education Achieved ####
+#### Creating Graph to Respondent's Degree of Job Satisfaction by Their Highest Level of Education Achieved ####
 
 cleaned_gss_2021 |>
   ggplot(mapping = aes(y = degree, fill = satjob)) +
@@ -234,21 +212,25 @@ cleaned_gss_2021 |>
         legend.text= element_text(size=6))
 ```
 
+From looking at @fig-3,
+
+According to **Figure 3**, the two highest levels of education still make up a significant portion of the \"More or Less Satisfied\" and the \"Not Satisfied at All'' groups.
+
 ```{r}
 #| echo: false
 #| warning: false
-#| label: fig-15
+#| label: fig-3
 #| fig-cap: "Respondent's Report of Financial Satisfaction by Their Highest Level of Education Achieved"
 
 #### Creating Graph to Compare Respondent's Report of Financial Satisfaction by Their Highest Level of Education Achieved ####
 
 cleaned_gss_2021 |>
-  ggplot(mapping = aes(y = satfin, fill = degree)) +
+  ggplot(mapping = aes(y = degree, fill = satfin)) +
   geom_bar() + 
   theme_classic() +
-  labs(y = "Financial Satisfaction",
+  labs(y = "Highest Level of Education Achieved",
        x = "Number of Respondents",
-       fill = "Highest Level of Education Achieved")+
+       fill = "Financial Satisfaction")+
   scale_fill_brewer(palette = "Pastel1") +
   theme(legend.title = element_text(size = 8),
         legend.text= element_text(size=8))
@@ -257,10 +239,10 @@ cleaned_gss_2021 |>
 ```{r}
 #| echo: false
 #| warning: false
-#| label: fig-17
-#| fig-cap: "Respondent's Report of Job Satisfaction by Their Self-Asscribed Financial Ranking Against Other US Families"
+#| label: fig-4
+#| fig-cap: "Respondent's Report of Job Satisfaction by Their Self-Ascribed Financial Ranking Against Other US Families"
 
-#### Creating Graph to Compare Respondent's Report of Job Satisfaction by Their Self-Asscribed Financial Ranking Against Other US Families ####
+#### Creating Graph to Compare Respondent's Report of Job Satisfaction by Their Self-Ascribed Financial Ranking Against Other US Families ####
 
 cleaned_gss_2021 |>
   ggplot(mapping = aes(y = finrela, fill = satjob)) +
@@ -277,8 +259,8 @@ cleaned_gss_2021 |>
 ```{r}
 #| echo: false
 #| warning: false
-#| label: fig-18
-#| fig-cap: "finrela vs satjob"
+#| label: fig-5
+#| fig-cap: "Respondent's Self-Asscribed Financial Ranking Against Other US Families by Their Reported Job Satisfaction"
 
 #### Creating Graph to  ####
 
@@ -292,6 +274,26 @@ cleaned_gss_2021 |>
   scale_fill_brewer(palette = "Pastel1") +
   theme(legend.title = element_text(size = 8),
         legend.text= element_text(size=8))
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-6
+#| fig-cap: "finrela vs class"
+
+#### Creating Graph to ####
+
+cleaned_gss_2021 |>
+ggplot(mapping = aes(y = finrela, fill = class)) +
+geom_bar() +
+theme_classic() +
+labs(y = "finrela",
+x = "number",
+fill = "class")+
+scale_fill_brewer(palette = "Pastel1") +
+theme(legend.title = element_text(size = 8),
+legend.text= element_text(size=8))
 ```
 
 # Discussion
@@ -308,15 +310,21 @@ The assumption in general is a higher degree of education translates so an overa
 
 Researchers have investigated the correlation between education and happiness, with several studies indicating that a higher level of education is positively associated with greater levels of happiness. This relationship may be explained by the fact that education can impact one's self-ascribed social class, which in turn can influence their notion of happiness. Higher education can provide individuals with better job opportunities, higher income, better access to resources, and greater social mobility, leading to a higher sense of social status. As a result, these individuals may experience greater life satisfaction, which contributes to their overall sense of happiness and security.
 
-In a 2020 article published in the Journal of Personality and Social Psychology, authors Siyu Yu and Steven L. Blader examined the impact of status and social class on subjective well-being (SWB). They found that social class addresses fundamental psychological needs, such as autonomy, mastery, respect, and occupational prestige, and proposed that individuals in higher social classes experience greater levels of status and power, leading to higher SWB **\[cite page 333\]**. Conversely, individuals in lower social classes feel lower levels of status and power, resulting in lower levels of SWB. As shown in **Figure 15**, we found that individuals holding Bachelors and Graduate Degrees are proportionally more satisfied with their financial situation, with the large majority selecting "Pretty Well Satisfied" and "More or Less Satisfied" than those selecting "Not Satisfied at All". Both the research and data point to the link between higher social class and greater levels of self-ascribed satisfaction and happiness.
+In a 2020 article published in the Journal of Personality and Social Psychology, authors Siyu Yu and Steven L. Blader examined the impact of status and social class on subjective well-being (SWB). They found that social class addresses fundamental psychological needs, such as autonomy, mastery, respect, and occupational prestige, and proposed that individuals in higher social classes experience greater levels of status and power, leading to higher SWB [@citeyublader]Conversely, individuals in lower social classes feel lower levels of status and power, resulting in lower levels of SWB. As shown in @fig-6 we found that individuals holding Bachelors and Graduate Degrees are proportionally more satisfied with their financial situation, with the large majority selecting "Pretty Well Satisfied" and "More or Less Satisfied" than those selecting "Not Satisfied at All". Both the research and data point to the link between higher social class and greater levels of self-ascribed satisfaction and happiness.
 
 Overall, there seems to be a significant relationship between education, social class, and one's perceived well-being. Education can serve as a key factor in determining an individual's social class as it unlocks opportunities for resources and mobility, which in turn can impact their sense of status and overall sense of happiness. At the same time, while higher levels of education may be generally associated with greater levels of happiness, this relationship may not always be a cause and effect correlation. Subjective well-being may be further influenced by other factors such as personal values, cultural background, and social support. It is important to consider these important nuances when examining the data in order to develop a more comprehensive understanding of how variables interact and impact individuals' lives. This will be further explored in the weaknesses, ethics, and bias section of this paper.
 
-## Third discussion point
+## Financial Satisfaction
+
+Financial satisfaction as a result of hard work is the core principle within the American Dream, and as a result, Americans are known for their work culture. Researchers have tried to investigate the differences between work culture within Europe as well as within the United States and have narrowed it down to a variety of factors that contribute to the culture as it is today. Despite the fact that the economies and societal frameworks of Europe and America are very similar, the approach to work within the United States is very different. The number of hours worked per year for the average American was about 17% higher than the hours per year for the average European [@citeeuropevacay]. For this reason, financial satisfaction and social class are very prevalent within the American definition of well-being. Job satisfaction ties very closely this idea in the pursuit of the American Dream. 
+
+The second largest group of participants who had completed the survey had completed a bachelor's degree. In general, while a higher level of education improves access to better job opportunities, the process is not as linear as it may seem. According to **Figure 2**, while the number of individuals who have a graduate degree is not as high as the group that has completed a bachelor\'s degree, the reported financial ranking against other families was proportionately very similar for both groups. The majority for both groups claimed to be average or above average. There was still a significant number of individuals who had chosen below average, even for the group with the highest level of education.
+
+A similar notion exists when comparing an individuals level of education with their job satisfaction. According to **Figure 3**, while most participants with an education level above high school, the majority group of individuals with a bachelor\'s or graduate degree still consists of those that chose \"Moderately Satisfied\", \"A Little Dissatisfied\", and \"Very Dissatisfied\". This points towards the unattainability of the American Dream, in that despite the greater level education and increased access that comes with it, it does not guarantee increased job satisfaction, or a higher financial satisfaction. According to **Figure 4**, the two highest levels of education still make up a significant portion of the \"More or Less Satisfied\" and the \"Not Satisfied at All'' groups.
 
 ## Limitations and weaknesses
 
-There are several limitations to this paper. One weakness is that our insights rely on data from the General Social Survey (GSS), which is a cross-sectional survey that collects data at a single point in time. While it can be useful for exploring relationships between variables and generating hypotheses, it cannot establish causality between variables, has limited ability to assess change over time, and has potential for selection bias if participants are not representative of the population of interest **\[cite article\]**. Due to the nature of the data being self-reported responses, it may not fully capture the dynamic nature of the ways in which various levels of education affect one's overall well-being. GSS responses are subject to influence by external factors such as recall bias, in which participants may have left out details when reporting about their subjective experiences.
+There are several limitations to this paper. One weakness is that our insights rely on data from the General Social Survey (GSS), which is a cross-sectional survey that collects data at a single point in time. While it can be useful for exploring relationships between variables and generating hypotheses, it cannot establish causality between variables, has limited ability to assess change over time, and has potential for selection bias if participants are not representative of the population of interest [@citestrengthsweaknesses]**.** Due to the nature of the data being self-reported responses, it may not fully capture the dynamic nature of the ways in which various levels of education affect one's overall well-being. GSS responses are subject to influence by external factors such as recall bias, in which participants may have left out details when reporting about their subjective experiences.
 
 Another potential ethical concern is that our paper may perpetuate the notion that higher education is the only solution to achieving happiness and success, disregarding the presence of systemic inequalities such as racism and economic inequality that can limit access to education and social mobility. Moreover, the sample survey in the GSS may not fully represent the experiences of more marginalized groups, which point to the need for further research and survey strategies that incorporate more diverse perspectives.
 
@@ -329,6 +337,8 @@ In sum, while the paper provides valuable insights on the relationship between e
 \appendix
 
 # Appendix
+
+[Supplementary Survey](https://forms.gle/vUCXy927cDnpx5UL9)
 
 \newpage
 
