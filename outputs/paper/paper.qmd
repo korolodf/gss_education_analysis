@@ -41,15 +41,15 @@ cleaned_gss_2021 <-
 
 This paper utilzes the R statistical programming language [@citeR], along with several packages, tidyverse [@citetidyverse], here [@citehere], janitor [@citejanitor],and dplyr [@citedplyr]. All figures in this paper have been created using the packages ggplot2 [@citeggplot2] and the tables have been created using knitr [@citeknitr] and kableExtra [@citekablextra]. The color styles in graphs have been created using the RColorBrewer packages [@citercolorbrewer].
 
-## Source
+## Source {#sec-second-point}
 
 All data within this paper are extracted from the 2021 United States General Social Survey (GSS). This survey consists of a series of nationally representative cross-sectional interviews and collects data on contemporary American society in order to explain trends in opinions, attitudes and behaviors and monitor these trends **\[citegsscodebook\].** Since it began tracking trends in public opinion in 1972, the GSS has used in-person data collection as its primary method of data collection but in 2021, it moved to an address-based sampling method with a focus on web and web-based self-administered questionnaires **\[citegsscodebook\]**. The 2021 GSS was conducted from December 1, 2020 to May 3, 2021, and was processed in accordance with standard NORC procedures **\[citegsscodebook\].**
 
-## Sampling
+## Sampling {#sec-third-point}
 
 The 2021 GSS samples adults over the age of 18 in the United States who do not live in institutional housing **\[citegsscodebook\].** This GSS was released in three batches, the first consisted of 10,091 addresses, the second consisted of 10,000 addresses and the third consisted of 7,500 addresses **\[citegsscodebook\]**. From these three releases, 1,271 completed the survey from the first batch, 1,391 completed the survey from the second batch, and 1,069 completed the survey from the third batch **\[citegsscodebook\].** Meaning that there was an overall response yield of 13.5% or 3,731 complete responses from the 27,591 total surveys released **\[citegsscodebook\].**
 
-## Key Features
+## Key Features {#sec-fourth-point}
 
 This paper is assessing our estimand of 1,567 responses of the 3,731 complete responses received which represents 42% of the complete respondents and only 5.7% of the total surveys released. Respondent's to the 2021 GSS are males or female US citizens, not living in institutional housing, who are over the age of 18 **\[citegsscodebook\]**. In our analysis we removed 2,164 responses to account for unanswered or not applicable responses. We did this to ensure that the data used in this paper is complete and representative of all variables. The variables we selected for our analysis can be seen in @tbl-1 and their measurement levels can be seen in @tbl-2.
 
@@ -101,8 +101,6 @@ This paper is assessing our estimand of 1,567 responses of the 3,731 complete re
   )
 ```
 
-## Bias and ethics
-
 ```{r}
 #| echo: false
 #| warning: false
@@ -127,6 +125,8 @@ variable_measure_table |>
   kable(booktabs = TRUE) |>
   kable_styling(font_size = 9, latex_options = "hold_position")
 ```
+
+## Bias and ethics {#sec-fifth-point}
 
 # Results {#sec-results}
 
@@ -328,9 +328,9 @@ Overall, there seems to be a significant relationship between education, social 
 
 Financial satisfaction as a result of hard work is the core principle within the American Dream, and as a result, Americans are known for their work culture. Researchers have tried to investigate the differences between work culture within Europe as well as within the United States and have narrowed it down to a variety of factors that contribute to the culture as it is today. Despite the fact that the economies and societal frameworks of Europe and America are very similar, the approach to work within the United States is very different. The number of hours worked per year for the average American was about 17% higher than the hours per year for the average European [@citeeuropevacay]. For this reason, financial satisfaction and social class are very prevalent within the American definition of well-being. Job satisfaction ties very closely this idea in the pursuit of the American Dream. 
 
-The second largest group of participants who had completed the survey had completed a bachelor's degree. In general, while a higher level of education improves access to better job opportunities, the process is not as linear as it may seem. According to **Figure 2**, while the number of individuals who have a graduate degree is not as high as the group that has completed a bachelor\'s degree, the reported financial ranking against other families was proportionately very similar for both groups. The majority for both groups claimed to be average or above average. There was still a significant number of individuals who had chosen below average, even for the group with the highest level of education.
+The second largest group of participants who had completed the survey had completed a bachelor's degree. In general, while a higher level of education improves access to better job opportunities, the process is not as linear as it may seem. According to @fig-2, while the number of individuals who have a graduate degree is not as high as the group that has completed a bachelor\'s degree, the reported financial ranking against other families was proportionately very similar for both groups. The majority for both groups claimed to be average or above average. There was still a significant number of individuals who had chosen below average, even for the group with the highest level of education.
 
-A similar notion exists when comparing an individuals level of education with their job satisfaction. According to **Figure 3**, while most participants with an education level above high school, the majority group of individuals with a bachelor\'s or graduate degree still consists of those that chose \"Moderately Satisfied\", \"A Little Dissatisfied\", and \"Very Dissatisfied\". This points towards the unattainability of the American Dream, in that despite the greater level education and increased access that comes with it, it does not guarantee increased job satisfaction, or a higher financial satisfaction. According to **Figure 4**, the two highest levels of education still make up a significant portion of the \"More or Less Satisfied\" and the \"Not Satisfied at All'' groups.
+A similar notion exists when comparing an individuals level of education with their job satisfaction. According to @fig-3, while most participants with an education level above high school, the majority group of individuals with a bachelor\'s or graduate degree still consists of those that chose \"Moderately Satisfied\", \"A Little Dissatisfied\", and \"Very Dissatisfied\". This points towards the unattainability of the American Dream, in that despite the greater level education and increased access that comes with it, it does not guarantee increased job satisfaction, or a higher financial satisfaction. According to @fig-4, the two highest levels of education still make up a significant portion of the \"More or Less Satisfied\" and the \"Not Satisfied at All'' groups.
 
 ## Limitations and weaknesses
 
@@ -348,7 +348,9 @@ In sum, while the paper provides valuable insights on the relationship between e
 
 # Appendix
 
-[Supplementary Survey](https://forms.gle/vUCXy927cDnpx5UL9)
+## Supplementary Survey
+
+Supplementary survey is available: [here](https://forms.gle/vUCXy927cDnpx5UL9)
 
 \newpage
 
