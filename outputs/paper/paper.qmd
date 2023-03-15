@@ -101,6 +101,8 @@ This paper is assessing our estimand of 1,567 responses of the 3,731 complete re
   )
 ```
 
+## Bias and ethics
+
 ```{r}
 #| echo: false
 #| warning: false
