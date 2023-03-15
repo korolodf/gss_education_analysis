@@ -23,7 +23,7 @@ simulated_gss_2021$"highest_year_of_education" |>
   length() == 14
 
 #### Test 2 ####
-simulated_gss_2021$"respondents_sex" |>
+simulated_gss_2021$"self_ascribed_comparison_of_financial_status_against_other_american_families" |>
   class() == "character"
 
 #### Test 3 ####
