@@ -249,7 +249,7 @@ cleaned_gss_2021 |>
 ```{r}
 #| echo: false
 #| warning: false
-#| label: fig-5
+#| label: fig-4
 #| fig-cap: "Respondent's Self-Ascribed Financial Ranking Against Other US Families by Their Reported Job Satisfaction"
 
 #### Creating Graph to Compare Respondent's Self-Ascribed Financial Ranking Against Other US Families by Their Reported Job Satisfaction ####
@@ -269,7 +269,7 @@ cleaned_gss_2021 |>
 ```{r}
 #| echo: false
 #| warning: false
-#| label: fig-6
+#| label: fig-5
 #| fig-cap: "Respondent's Self-Ascribed Financial Ranking Against Other US Families by Their Self-Ascribed Social Class"
 
 #### Creating Graph to Compare Respondent's Self-Ascribed Financial Ranking Against Other US Families by Their Self-Ascribed Social Class ####
@@ -301,7 +301,7 @@ The assumption in general is a higher degree of education translates so an overa
 
 Researchers have investigated the correlation between education and happiness, with several studies indicating that a higher level of education is positively associated with greater levels of happiness. This relationship may be explained by the fact that education can impact one's self-ascribed social class, which in turn can influence their notion of happiness. Higher education can provide individuals with better job opportunities, higher income, better access to resources, and greater social mobility, leading to a higher sense of social status. As a result, these individuals may experience greater life satisfaction, which contributes to their overall sense of happiness and security.
 
-In a 2020 article published in the Journal of Personality and Social Psychology, authors Siyu Yu and Steven L. Blader examined the impact of status and social class on subjective well-being (SWB). They found that social class addresses fundamental psychological needs, such as autonomy, mastery, respect, and occupational prestige, and proposed that individuals in higher social classes experience greater levels of status and power, leading to higher SWB [@citeyublader]Conversely, individuals in lower social classes feel lower levels of status and power, resulting in lower levels of SWB. As shown in @fig-6 we found that individuals holding Bachelors and Graduate Degrees are proportionally more satisfied with their financial situation, with the large majority selecting "Pretty Well Satisfied" and "More or Less Satisfied" than those selecting "Not Satisfied at All". Both the research and data point to the link between higher social class and greater levels of self-ascribed satisfaction and happiness.
+In a 2020 article published in the Journal of Personality and Social Psychology, authors Siyu Yu and Steven L. Blader examined the impact of status and social class on subjective well-being (SWB). They found that social class addresses fundamental psychological needs, such as autonomy, mastery, respect, and occupational prestige, and proposed that individuals in higher social classes experience greater levels of status and power, leading to higher SWB [@citeyublader]Conversely, individuals in lower social classes feel lower levels of status and power, resulting in lower levels of SWB. As shown in @fig-5 we found that individuals holding Bachelors and Graduate Degrees are proportionally more satisfied with their financial situation, with the large majority selecting "Pretty Well Satisfied" and "More or Less Satisfied" than those selecting "Not Satisfied at All". Both the research and data point to the link between higher social class and greater levels of self-ascribed satisfaction and happiness.
 
 Overall, there seems to be a significant relationship between education, social class, and one's perceived well-being. Education can serve as a key factor in determining an individual's social class as it unlocks opportunities for resources and mobility, which in turn can impact their sense of status and overall sense of happiness. At the same time, while higher levels of education may be generally associated with greater levels of happiness, this relationship may not always be a cause and effect correlation. Subjective well-being may be further influenced by other factors such as personal values, cultural background, and social support. It is important to consider these important nuances when examining the data in order to develop a more comprehensive understanding of how variables interact and impact individuals' lives. This will be further explored in the weaknesses, ethics, and bias section of this paper.
 
