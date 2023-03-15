@@ -18,12 +18,12 @@ simulated_gss_2021 <- read.csv(here::here("./inputs/data/2021_simulated_data/sim
 #### Testing Simulated Data ####
 
 #### Test 1 ####
-simulated_gss_2021$"highest_year_of_education" |>
+simulated_gss_2021$"highest_level_of_education" |>
   unique()|>
-  length() == 14
+  length() == 5
 
 #### Test 2 ####
-simulated_gss_2021$"self_ascribed_comparison_of_financial_status_against_other_american_families" |>
+simulated_gss_2021$"compare_financial_status_against_other_us_families" |>
   class() == "character"
 
 #### Test 3 ####
