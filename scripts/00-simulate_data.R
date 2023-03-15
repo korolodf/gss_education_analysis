@@ -13,8 +13,6 @@
 
 #### Workspace setup ####
 library(tibble)
-library()
-
 
 #### Simulate data ####
 
