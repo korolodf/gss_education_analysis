@@ -30,16 +30,26 @@ Next, we will clean the data to help use better use and understand the data. Wit
 
 ## Analyzing Data
 
-For this project, data analysis occurs within the paper.qmd file which is located,
+For this project, data analysis occurs within the paper.qmd file which is located at
 
-outputs/paper/paper.qmd
+`outputs/paper/paper.qmd`
 
 This is a Quarto document and can be used to generate the paper.pdf file which is located at
 
-outputs/paper/paper.pdf
+`outputs/paper/paper.pdf`
 
 Raw references used within the .qmd file are available at
 
 outputs/paper/references.bib
 
-## Data Source
+## Simulating Data
+
+Simulated data for this project is located at
+
+scripts/00-simulate_data.R
+
+## Testing data
+
+Three tests for this project are located at
+
+scripts/04-test_data.R
