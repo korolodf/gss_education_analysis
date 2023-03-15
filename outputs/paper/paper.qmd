@@ -168,6 +168,16 @@ cleaned_gss_2021$class <-
          levels = c("Lower Class", "Working Class", "Middle Class", "Upper Class"))
 ```
 
+```{r}
+#| include: false
+
+#### Ordering Financial Satisfaction####
+
+cleaned_gss_2021$satfin <- 
+  factor(cleaned_gss_2021$satfin, 
+         levels = c("Pretty Well Satisfied", "More or Less Satisfied", "Not Satisfied at All"))
+```
+
 When looking at @fig-1, we can see that the majority of respondents have only completed their high school diploma with the next highest response category being bachelor's degree and the third being graduate degrees. Generally respondents who identified as having their bachelor's degree or graduate degree reported being more likely to be "above average" and "far above average" than respondents who reported having an associate or junior college degree or lower. Interestingly, a large portion of respondents with higher levels of education still reported themselves as "average" when comparing themselves to other US families. Additionally, the rate at which those with less than a high school diploma and high school diplomas self-report ranking when compared to other US households decreases substantially at every measuring point as ranking increases.
 
 ```{r}
@@ -212,9 +222,7 @@ cleaned_gss_2021 |>
         legend.text= element_text(size=6))
 ```
 
-From looking at @fig-3,
-
-According to **Figure 3**, the two highest levels of education still make up a significant portion of the \"More or Less Satisfied\" and the \"Not Satisfied at All'' groups.
+@fig-3 demonstrates that most respondents are "more or less satisfied" or higher when discussing their degree of financial satisfaction. Importantly, we can see that those with higher levels of education have higher rates within their group of being "pretty well satisfied" with their financial standing, than those with lower levels of education. Additionally, we can see that those with associate or junior college level education are the most balanced in all levels of financial satisfaction, alluding to the idea that specific type of degree is influential in how respondents may respond.
 
 ```{r}
 #| echo: false
