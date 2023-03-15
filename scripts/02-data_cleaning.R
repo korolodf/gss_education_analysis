@@ -5,7 +5,7 @@
 # Date: 10 March 2023 
 # License: MIT
 # Pre-requisites: Need to be able to access and download 2021 GSS data from https://gss.norc.org/get-the-data/stata
-# Any other information needed? Need to be able to access the 2021 GSS Codebook to understand how values were relabelled.
+# Any other information needed? Need to be able to access the 2021 GSS Codebook to understand how values were re-labelled.
 
 #### Need to Install These Packages to Run Script ####
 # install.packages("dplyr")
@@ -35,7 +35,7 @@ cleaned_gss_2021 <-
 #### Select Relevant Columns ####
 cleaned_gss_2021 <-
   cleaned_gss_2021 |>
-  select(happy, degree, sex, satjob, richwork, class, satfin, finrela)
+  select( degree, satjob, class, satfin, finrela)
 
 #### Removing NA Rows from Data ####
 cleaned_gss_2021 <- 
@@ -44,19 +44,6 @@ cleaned_gss_2021 <-
 
 #### Removing Label to be Able to Make Data More Meaningful ####
 unlabelled(cleaned_gss_2021)
-
-#### Re-coding How Respondent's Describe Their Financial Ranking against Other Americans to be More Meaningful ####
-cleaned_gss_2021 <- cleaned_gss_2021 |>
-  mutate(
-    happy =
-      recode(
-        happy,
-        "1" = "Very Happy",
-        "2" = "Pretty Happy",
-        "3" = "Not Too Happy"
-      )
-  )
-
 
 
 #### Re-coding Respondent's Highest Degree of Education to be More Meaningful ####
@@ -73,16 +60,6 @@ cleaned_gss_2021 <- cleaned_gss_2021 |>
       )
       )
 
-#### Re-coding Respondent's Sex to be More Meaningful ####
-cleaned_gss_2021 <- cleaned_gss_2021 |>
-  mutate(
-    sex = 
-      recode(
-        sex,
-        "1" = "Male",
-        "2" = "Female"
-      )
-  )
 
 #### Re-coding Respondent's Job Satisfaction to be More Meaningful ####
 cleaned_gss_2021 <- cleaned_gss_2021 |>
@@ -97,16 +74,7 @@ cleaned_gss_2021 <- cleaned_gss_2021 |>
       )
   )
 
-#### Re-coding Respondent's Willingness to Stop Working if They Become Rich to be More Meaningful ####
-cleaned_gss_2021 <- cleaned_gss_2021 |>
-  mutate(
-    richwork = 
-      recode(
-        richwork,
-        "1" = "Continue to Work",
-        "2" = "Stop Working"
-      )
-  )
+
 
 #### Re-coding Respondent's Self-Ascribed Social Class to be More Meaningful ####
 cleaned_gss_2021 <- cleaned_gss_2021 |>
