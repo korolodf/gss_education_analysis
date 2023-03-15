@@ -5,7 +5,7 @@ author:
   - Emily Kim
   - Huda Sahaf
   - Chloe Thierstein
-thanks: "Code and data are available at: https://github.com/cthierst/gss_education_analysis.git"
+thanks: "Code and data are available at: https://github.com/cthierst/gss_education_analysis.git" 
 date: "March 16, 2023"
 date-format: "D MMMM YYYY"
 abstract: "abstract (work in progress)"
@@ -68,7 +68,6 @@ This paper is assessing our estimand 1,567 responses of the 3,731 complete respo
       "class",
       "degree",
       "finrela",
-      "happy",
       "satjob",
       "satfin",
       "sex"
@@ -77,10 +76,35 @@ This paper is assessing our estimand 1,567 responses of the 3,731 complete respo
       "Self-ascribed class of the respondent",
       "Highest level of education achieved by respondent",
       "Self-ascribed ranking of respondnet when compared to other US households",
-      "Respondent's rating of how happy they are daily",
       "Level of satisfaction with the work respondents do",
       "Level of satisfaction with the job respondents have",
       "Sex of the respondent"
+    )
+  )
+```
+
+```{r}
+#| include: false
+
+#### Create Variable Description Tibble #### 
+
+ variable_measure_table <-
+  tibble(
+    "Variable" = c(
+      "class",
+      "degree",
+      "finrela",
+      "satjob",
+      "satfin",
+      "sex"
+    ),
+    "Variable Measurement" = c(
+      "Lower Class, Working Class, Middle Class, Upper Class",
+      "Less Than High School, High School, Associate / Junior College, Bachelors, Graduate",
+      "Far Below Average, Below Average, Average, Above Average, Far Above Average",
+      "Very Satisfied, Moderately Satisfied, A Little Dissatisfied, Very Dissatisfied",
+      "Pretty Well Satisfied, More or Less Satisfied, Not Satisfied at All",
+      "Male, Female"
     )
   )
 ```
@@ -94,8 +118,20 @@ This paper is assessing our estimand 1,567 responses of the 3,731 complete respo
 #### Add Variable Table ####
 variable_table |>
   kable(booktabs = TRUE) |>
-  kable_styling(font_size = 7, latex_options = "hold_position")
+  kable_styling(font_size = 9, latex_options = "hold_position")
 
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: tbl-2
+#| tbl-cap: "Variable Measurements"
+
+#### Add Variable Table ####
+variable_measure_table |>
+  kable(booktabs = TRUE) |>
+  kable_styling(font_size = 9, latex_options = "hold_position")
 ```
 
 # Results {#sec-results}
