@@ -53,6 +53,12 @@ Raw references used within the .qmd file are available at
 
 `outputs/paper/references.bib`
 
+## Supplementary Survey
+
+The supplementary survey used within the paper can be accessed [here](https://forms.gle/tf5AtYfkH2ksJdMc9) or can be accessed in .png files at
+
+`outputs/paper/supplementary_survey`
+
 ## Simulating Data
 
 Simulated data for this project is located at
