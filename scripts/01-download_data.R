@@ -5,7 +5,6 @@
 # Date: 10 March 2023 
 # License: MIT
 # Prerequisites: Need to be able to access and download 2021 GSS data from https://gss.norc.org/get-the-data/stata
-# Any other information needed? [...UPDATE THIS...]
 
 
 #### Workspace Set-up ####

@@ -6,10 +6,8 @@
 # License: MIT
 # Pre-requisites: To understand data need to know where to find the 2021 US General Social Survey data
 
-
 #### Need to Install These Packages to Run Script ####
 # install.packages("tibble")
-
 
 #### Workspace setup ####
 library(tibble)
@@ -72,7 +70,6 @@ simulated_gss_2021 <-
       replace = TRUE
     )
   )
-
 
 #### Save Simulated Data ####
 write.csv(
