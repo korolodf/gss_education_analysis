@@ -128,6 +128,8 @@ variable_measure_table |>
 
 ## Bias and ethics {#sec-fifth-point}
 
+It is important to note that observations from the 2021 GSS may be influenced by social trends due to the world around them, such as the COVID-19 pandemic along with methodological shifts that occurred for this survey. As the GSS changed to a full web-based survey in this year, answers could have been impacted. This is why we have chosen not to compare previous survey results. Additionally, as this survey was completed online, there is a higher rate of non-response. To control for this the 2021 GSS adjusted population totals to ensure that the weighted totals were able to match closely to the U.S Census Bureau estimates by sex, age, education, race, ethnicity, and  region of the country **\[citegsscodebook\]**. Additionally due to the online nature of the survey in 2021, household enumeration was not possible and so households had to identify the adult with the most birthday **\[citegsscodebook\]**. This could have resulted in respondent selections occurring at the household level or missing some household residents such as people living abroad, adult children, etc. **\[citegsscodebook\]**. More bias can occur from sampling error in which the sample conducted from this survey could not be representative of the US population **\[citegsscodebook\]**. Although, the US GSS does control for this by conducting tests of significance to look for trend differences estimates **\[citegsscodebook\].**
+
 # Results {#sec-results}
 
 ```{r}
