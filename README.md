@@ -1,8 +1,8 @@
-# Life Satisfaction and Education in the United States
+# Higher Levels of Education in the U.S. May Positively Correlate to Greater Levels of Financial Satisfaction and Social Worth
 
 ## Overview
 
-This repository contains all files necessary to conduct an analysis of United States population life satisfaction against highest-level of education achieved. The aim of this analysis is to determine if level of education achieved by US citizens influences life satisfaction as measured by happiness as related to financial satisfaction, job satisfaction, self-ascribed social class and self-perceived financial ranking against other US households.
+This repository contains all files necessary to conduct an analysis of the United States population levels of education in relation to selected indicators of life satisfaction. The aim of this analysis is to determine if level of education achieved by US citizens influences life satisfaction as measured by wellness by financial satisfaction, job satisfaction, self-ascribed social class and self-perceived financial ranking against other US households.
 
 ## Requirements
 
