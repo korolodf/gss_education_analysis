@@ -51,7 +51,7 @@ This paper utilizes the R statistical programming language [@citeR], along with 
 
 ## Source {#sec-second-point}
 
-All data within this paper are extracted from the 2021 United States General Social Survey (GSS). This survey consists of a series of nationally representative cross-sectional interviews and collects data on contemporary American society in order to explain trends in opinions, attitudes and behaviors and monitor these trends [@citegsscodebook**].** Since it began tracking trends in public opinion in 1972, the GSS has used in-person data collection as its primary method of data collection but in 2021, it moved to an address-based sampling method with a focus on web and web-based self-administered questionnaires **[@citegsscodebook**]. The 2021 GSS was conducted from December 1, 2020 to May 3, 2021, and was processed in accordance with standard NORC procedures [@citegsscodebook]**.**
+All data within this paper are extracted from the 2021 United States General Social Survey (GSS). This survey consists of a series of nationally representative cross-sectional interviews and collects data on contemporary American society in order to explain trends in opinions, attitudes and behaviors and monitor these trends [@citegsscodebook]. Since it began tracking trends in public opinion in 1972, the GSS has used in-person data collection as its primary method of data collection but in 2021, it moved to an address-based sampling method with a focus on web and web-based self-administered questionnaires [@citegsscodebook].The 2021 GSS was conducted from December 1, 2020 to May 3, 2021, and was processed in accordance with standard NORC procedures [@citegsscodebook]**.**
 
 ## Sampling {#sec-third-point}
 
@@ -278,8 +278,6 @@ cleaned_gss_2021 |>
   theme(legend.title = element_text(size = 8),
         legend.text= element_text(size=8))
 ```
-
-\newpage
 
 # Discussion {#sec-discussion}
 
