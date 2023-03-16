@@ -8,9 +8,13 @@
 
 #### Need to Install These Packages to Run Script ####
 # install.packages("tibble")
+# install.packages("readr")
+# install.packages("hear")
 
 #### Workspace setup ####
 library(tibble)
+library(readr)
+library(here)
 
 #### Simulate data ####
 
@@ -72,9 +76,7 @@ simulated_gss_2021 <-
   )
 
 #### Save Simulated Data ####
-write.csv(
-  x = simulated_gss_2021,
-  file = "simulated_gss_2021.csv"
-) #move this .csv to 2021_data folder
+write_csv(simulated_gss_2021, here::here("inputs/data/simulated_gss_2021.csv"))
+) #download to inputs/data
 
 
