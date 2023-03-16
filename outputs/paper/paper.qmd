@@ -22,7 +22,6 @@ bibliography: references.bib
 library(tidyverse)
 library(ggplot2)
 library(RColorBrewer)
-library(modelsummary)
 library(kableExtra)
 library(knitr)
 library(dplyr)
