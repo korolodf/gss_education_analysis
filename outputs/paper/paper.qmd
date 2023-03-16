@@ -252,16 +252,16 @@ By looking at @fig-4 we can see that those who rank themselves as "above average
 #| echo: false
 #| warning: false
 #| label: fig-4
-#| fig-cap: "Respondent's Self-Ascribed Financial Ranking Against Other US Families by Their Self-Ascribed Social Class"
+#| fig-cap: "Respondent's Self-Ascribed Social Class by Their Highest Level of Education Achieved"
 
 #### Creating Graph to Compare Respondent's Self-Ascribed Financial Ranking Against Other US Families by Their Self-Ascribed Social Class ####
 
 cleaned_gss_2021 |>
-  ggplot(mapping = aes(y = finrela, fill = class)) +
+  ggplot(mapping = aes(y = degree, fill = class)) +
   geom_bar() +
   theme_classic() +
   labs(
-    y = "Rating Against Other US Families",
+    y = "Highest Level of Education Achieved",
     x = "Number of Respondents",
     fill = "Social Class") +
   scale_fill_brewer(palette = "Pastel1") +
