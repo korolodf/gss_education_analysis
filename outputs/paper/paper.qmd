@@ -1,6 +1,6 @@
 ---
-title: "GSS Education Analysis (Working Title)"
-subtitle: "GSS Education Analysis (Working Subtitle)"
+title: "Higher Levels of Education in the U.S. May Positively Correlate to Greater Levels of Financial Satisfaction and Social Worth"
+subtitle: "An Analysis of 2021 U.S. General Social Survey Data"
 author: 
   - Emily Kim
   - Huda Sahaf
@@ -8,7 +8,7 @@ author:
 thanks: "Code and data are available at: https://github.com/cthierst/gss_education_analysis.git" 
 date: "March 16, 2023"
 date-format: "D MMMM YYYY"
-abstract: "abstract (work in progress)"
+abstract: "The American Dream suggests that success can be attained through hard work, but the extent to which education is necessary for achieving financial stability and social status remains uncertain. This report aims to examine the relationship between education and one’s overall well-being by analyzing data from the 2021 United States General Social Survey. More specifically, we investigate the correlation between level of education, self-ascribed social class, and financial satisfaction. Our findings reveal that these relationships are varied and complex, indicating that higher education does not necessarily guarantee a linear path to success."
 format: pdf
 toc: TRUE
 number-sections: TRUE
