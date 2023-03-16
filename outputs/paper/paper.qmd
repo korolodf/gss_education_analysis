@@ -335,11 +335,11 @@ The supplementary survey is available: [here](https://forms.gle/vUCXy927cDnpx5UL
 #### Import .png Files of Supplementary Survey ####
 
 knitr::include_graphics("./supplementary_survey/suppl_surv_01.png")
-knitr::include_graphics("./supplementary_survey/suppl_surv_2.png")
-knitr::include_graphics("./supplementary_survey/suppl_surv_3.png")
-knitr::include_graphics("./supplementary_survey/suppl_surv_4.png")
-knitr::include_graphics("./supplementary_survey/suppl_surv_5.png")
-knitr::include_graphics("./supplementary_survey/suppl_surv_6.png")
+knitr::include_graphics("./supplementary_survey/suppl_surv_02.png")
+knitr::include_graphics("./supplementary_survey/suppl_surv_03.png")
+knitr::include_graphics("./supplementary_survey/suppl_surv_04.png")
+knitr::include_graphics("./supplementary_survey/suppl_surv_05.png")
+knitr::include_graphics("./supplementary_survey/suppl_surv_06.png")
 
 ```
 
