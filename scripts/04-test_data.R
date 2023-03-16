@@ -1,12 +1,12 @@
 #### Preamble ####
-# Purpose: Tests simulated data of the 2021 Us General Social Survey. The real data can be downloaded from https://gss.norc.org/get-the-data/stata
+# Purpose: Test the simulated data of the 2021 US General Social Survey. The real data can be downloaded from https://gss.norc.org/get-the-data/stata
 # Author: Chloe Thierstein, Huda Sahaf, Emily Kim 
 # Contact: chloe.thierstein@utoronto.ca, huda.sahaf@mail.utoronto.ca, emilyuna.kim@mail.utoronto.ca
 # Date: 6 March 2023 
 # License: MIT
 # Pre-requisites: Need to be able to load in simulated data
 
-#### Need to Install These Packages to Run Script ####
+#### Need to install these packages to run script ####
 # install.packages("here")
 
 #### Workspace setup ####
